@@ -1,0 +1,16 @@
+public class Principal {
+	public static void main(String[] args) {
+		Filme meuFilme = new Filme(); //Tipo por referência 
+		meuFilme.nome = "Homem Aranha";
+		meuFilme.anoLancamento = 2003;
+		meuFilme.duracaoMinutos = 210;
+		
+		meuFilme.mostraDados();
+		meuFilme.avaliaFilme(6);
+		meuFilme.avaliaFilme(7);
+		meuFilme.avaliaFilme(8);
+		
+		System.out.println(meuFilme.somaAvaliacao);
+		System.out.println(meuFilme.totalAvaliacao);
+	}
+}

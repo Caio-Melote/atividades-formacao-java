@@ -1,0 +1,29 @@
+package br.com.spotmy.audio;
+
+public class Musica extends Audio {
+	private String album;
+	private String genero;
+	
+	//Getter
+	public String getAlbum() {
+		return album;
+	}
+	
+	public String getGenero() {
+		return genero;
+	}
+	
+	//Setter
+	public void setAlbum(String album) {
+		this.album = album;
+	}
+	
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+	
+	public void curtir() {
+		System.out.println("Musica curtido!!");
+		super.curtir();
+	}
+}

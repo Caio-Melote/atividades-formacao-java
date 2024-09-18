@@ -1,0 +1,34 @@
+package br.com.cartao.principal;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import br.com.cartao.modelo.Cartao;
+
+public class Principal {
+	public static void Main(String [] args) {
+		
+		Scanner escaneador = new Scanner(System.in);
+		double limiteCartao = 0;
+		int i = 0;	
+		boolean compraAutorizada = false;
+		List<Cartao> listagemCompras = new ArrayList<Cartao>();
+		
+		
+		while (i > 1){
+			System.out.println("Insira o valor do limite do cartão: ");
+			limiteCartao = escaneador.nextDouble();
+			
+			Cartao card = new Cartao(limiteCartao);
+			
+			
+			
+			
+		}
+	
+	escaneador.close();
+	}
+}
+	
+	

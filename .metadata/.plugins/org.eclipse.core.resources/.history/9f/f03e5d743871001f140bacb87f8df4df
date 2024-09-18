@@ -1,0 +1,24 @@
+package br.com.spotmy.audio;
+
+public class Podcasts extends Audio {
+	private String tema;
+	private String convidado;
+	
+	//Getter
+	public String getTema() {
+		return tema;
+	}
+	
+	public String getConvidado() {
+		return convidado;
+	}
+	
+	//Setter
+	public void setTema(String tema) {
+		this.tema = tema;
+	}
+	
+	public void setConvidado(String convidado) {
+		this.convidado = convidado;
+	}
+}

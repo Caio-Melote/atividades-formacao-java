@@ -1,0 +1,7 @@
+package Interface;
+
+public interface SobreescritaString {
+	public default String toString() {
+		
+	}
+}

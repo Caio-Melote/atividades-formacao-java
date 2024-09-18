@@ -1,0 +1,45 @@
+package br.com.stlus.movies;
+public class Filme {
+	
+	//Atributos
+	private String nome;
+	private int anoLancamento;
+	private boolean incluidoAssinatura;
+	private double somaAvaliacao;
+	private int quantidadeAvaliacao;
+	private int duracaoMinutos;
+	
+	//Getter
+	public int getQuantidadeAvaliacao() {
+		return quantidadeAvaliacao;
+	}
+	
+	//Setter
+	public void setNome (String nome) {
+		this.nome = nome;
+	}
+	
+	public void setAnoLancamento (int anoLancamento) {
+		this.anoLancamento = anoLancamento;
+	}
+	
+	//Métodos 
+	public void mostraDados() {
+		System.out.println("* Nome do filme: " + nome);
+		System.out.println("* Ano do lançamento: " + anoLancamento);
+		System.out.println("* Está incluido na assinatura: " + incluidoAssinatura);
+		System.out.println("* Duração: " + duracaoMinutos + " minutos");
+		System.out.println("* Soma das avaliações: " + somaAvaliacao);
+		System.out.println("* Quantidade de avaliações: " + quantidadeAvaliacao + "\n");
+	}
+	
+	public void avaliaFilme(double nota) {
+		somaAvaliacao += nota;
+		quantidadeAvaliacao++;
+	}
+	
+	public double mediaAvaliacao() {
+		return (somaAvaliacao / quantidadeAvaliacao);
+	}
+}
+	

@@ -1,0 +1,22 @@
+import br.curso.projeto.site.filmes.Filme;
+
+public class Principal {
+	public static void main(String[] args) {
+		Filme meuFilme = new Filme(); //Tipo por referência 
+		meuFilme.nome = "Homem Aranha";
+		meuFilme.anoLancamento = 2003;
+		meuFilme.duracaoMinutos = 210;
+		
+		
+		meuFilme.avaliaFilme(6);
+		meuFilme.avaliaFilme(7);
+		meuFilme.avaliaFilme(8);
+		
+		meuFilme.mostraDados();
+		
+		//System.out.println("\n" + meuFilme.somaAvaliacao); //Agora está privado
+		//System.out.println(meuFilme.quantidadeAvaliacao); //Agora está privado
+		System.out.println("Quantidade com GET: " + meuFilme.getQuantidadeAvaliacao());
+		System.out.println(meuFilme.mediaAvaliacao());
+	}
+}

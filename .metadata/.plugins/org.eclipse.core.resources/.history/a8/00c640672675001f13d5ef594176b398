@@ -1,0 +1,94 @@
+package br.com.buscacep.modelo;
+
+public class Endereco {
+
+	// Atributos
+	//private int cep;
+	private String rua;
+	private String distritos;
+	private String cidade;
+	private String unidadeFederativa;
+	private int populacaoCidade;
+	
+	//Construtor
+	public Endereco(String rua, String distritos, String cidade, String unidadeFederativa, int populacaoCidade) {
+		//setCep(cep);
+		setRua(rua);
+		setDistritos(distritos);
+		setCidade(cidade);
+		setUnidadeFederativa(unidadeFederativa);
+		setPopulacaoCidade(populacaoCidade);
+	}
+	
+	//Getters
+//	private int getCep() {
+//		return cep;
+//	}
+
+	public Endereco(ViaCepRecord enderecoRecord) {
+		setRua(enderecoRecord.logradouro());
+		setDistritos(enderecoRecord.bairro());
+		setCidade(enderecoRecord.localidade());
+		setUnidadeFederativa(enderecoRecord.estado());
+		setPopulacaoCidade(enderecoRecord.ibge());
+	}
+
+	private String getRua() {
+		return rua;
+	}
+	
+	private String getDistritos() {
+		return distritos;
+	}
+	
+	private String getCidade() {
+		return cidade;
+	}
+
+	private String getUnidadeFederativa() {
+		return unidadeFederativa;
+	}
+	
+	private int getPopulacaoCidade() {
+		return populacaoCidade;
+	}
+	
+	//Setters
+//	private void setCep(int cep) {
+//		this.cep = cep;
+//	}
+	
+	private void setRua(String rua) {
+		this.rua = rua;
+	}
+
+	private void setDistritos(String distritos) {
+		this.distritos = distritos;
+	}
+	
+	private void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	private void setUnidadeFederativa(String unidadeFederativa) {
+		this.unidadeFederativa = unidadeFederativa;
+	}
+
+	private void setPopulacaoCidade(int populacaoCidade) {
+		this.populacaoCidade = populacaoCidade;
+	}
+
+	@Override
+	public String toString() {
+		return "Endereco" + 
+				//"\nCep =" + cep + 
+				"\nRua = " + rua + 
+				"\nDistritos = " + distritos + 
+				"\nCidade = " + cidade + 
+				"\nUnidade Federativa = " + unidadeFederativa + 
+				"\nPopulacao da Cidade = " + populacaoCidade + " habitantes";
+	}
+
+	
+	
+}

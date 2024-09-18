@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Leitura {
+
+	public static void main(String[] args) {
+		Scanner leituraScanner = new Scanner(System.in);
+
+		System.out.println("Digite um filme: ");
+		String filme = leituraScanner.nextLine();
+		System.out.println(filme);
+	}
+
+}

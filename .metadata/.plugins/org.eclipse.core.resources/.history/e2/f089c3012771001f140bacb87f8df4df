@@ -1,0 +1,18 @@
+package br.com.stlus.modelos;
+
+public class Filme extends Titulo {
+	
+	//Atributo
+	private double bilheteria;
+	
+	//Getter
+	public double getBilheteria () {
+		return bilheteria;
+	}
+	
+	//Setter
+	public void setBilheteria (double bilheteria) {
+		this.bilheteria = bilheteria;
+	}
+}
+	

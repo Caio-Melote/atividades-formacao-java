@@ -1,0 +1,37 @@
+package br.com.stlus.caioflix;
+
+public class Episodio {
+	
+	//Atributo
+	private int numero;
+	private String nome;
+	private Serie serie;
+	
+	//Getter
+	
+	public int getNumero() {
+		return numero;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public Serie getSerie() {
+		return serie;
+	}
+	
+	//Setter
+	
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public void setNumero(Serie serie) {
+		this.serie = serie;
+	}
+}

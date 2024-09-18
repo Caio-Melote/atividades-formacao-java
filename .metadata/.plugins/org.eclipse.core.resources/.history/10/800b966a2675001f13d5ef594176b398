@@ -1,0 +1,5 @@
+package br.com.buscacep.modelo;
+
+public record ViaCepRecord(String logradouro, String bairro, String localidade, String estado, int ibge) {
+
+}

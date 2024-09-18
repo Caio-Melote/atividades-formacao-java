@@ -1,0 +1,17 @@
+import br.com.spotmy.audio.Musica;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Musica musica = new Musica();
+		
+		musica.setTitulo("Californication");
+		musica.setGenero("Rock");
+		musica.setAlbum("California");
+		musica.setDuracaoMinutos(3);
+		
+		musica.shazam();
+
+	}
+
+}

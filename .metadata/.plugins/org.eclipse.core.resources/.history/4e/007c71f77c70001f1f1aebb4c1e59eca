@@ -1,0 +1,16 @@
+public class Filme {
+	String nome;
+	int anoLancamento;
+	boolean incluidoAssinatura;
+	double avaliacao;
+	int totalAvaliacao;
+	int duracaoMinutos;
+	
+	void mostraDados() {
+		System.out.println("Nome do filme: " + nome);
+		System.out.println("Ano do lançamento: " + anoLancamento);
+		System.out.println("Duração: " + duracaoMinutos + " minutos");
+		System.out.println("Nota de avaliação: " + avaliacao);
+		System.out.println("Quantidade de avaliações: " + totalAvaliacao);
+	}
+}

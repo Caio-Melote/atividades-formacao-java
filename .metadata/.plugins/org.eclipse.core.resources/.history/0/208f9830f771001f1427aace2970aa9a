@@ -1,0 +1,5 @@
+package RepresentaString;
+
+public interface RepresentaString {
+
+}

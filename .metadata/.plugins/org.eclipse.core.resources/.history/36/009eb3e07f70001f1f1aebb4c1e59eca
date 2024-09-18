@@ -1,0 +1,17 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		double valor = 0;
+		
+		valor = 25;
+		
+		Calculadora x = new Calculadora();
+		
+		x.dobrarNumero(valor);
+		
+		System.out.println("O valor é: " + valor + "\nO dobro deste valor é: " + x);
+
+	}
+
+}

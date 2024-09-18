@@ -1,0 +1,23 @@
+
+public class Condicional {
+
+	public static void main(String[] args) {
+		int ano = 2006;
+		boolean incluido = true;
+		double notaFilme = 9.9;
+		String tipoPlano = "VIP";
+		
+		if (ano >= 2000) {
+			System.out.println("Filme dos anos 2000!!");
+		} else {
+			System.out.println("Filme antigo em!! Antes dos anos 2000.");
+		}
+		
+		if (incluido == true || tipoPlano.equals("VIP")) {
+			System.out.println("Filme disponível!");
+		} else {
+			System.out.println("Filme bloqueado!");
+		}
+	}
+
+}

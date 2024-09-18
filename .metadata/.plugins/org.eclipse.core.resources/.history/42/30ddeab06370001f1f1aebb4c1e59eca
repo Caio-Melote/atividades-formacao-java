@@ -1,0 +1,11 @@
+
+public class Condicional {
+
+	public static void main(String[] args) {
+		int ano = 2006;
+		boolean incluido = true;
+		double notaFilme = 9.9;
+
+	}
+
+}

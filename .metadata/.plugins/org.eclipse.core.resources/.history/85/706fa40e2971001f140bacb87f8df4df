@@ -1,0 +1,24 @@
+package br.com.stlus.modelos;
+
+import br.com.stlus.calculos.Classificavel;
+
+public class Filme extends Titulo implements Classificavel {
+	
+	//Atributo
+	private double bilheteria;
+	
+	//Getter
+	public double getBilheteria () {
+		return bilheteria;
+	}
+	
+	//Setter
+	public void setBilheteria (double bilheteria) {
+		this.bilheteria = bilheteria;
+	}
+	
+	public int getClassificacao() {
+		
+	}
+}
+	

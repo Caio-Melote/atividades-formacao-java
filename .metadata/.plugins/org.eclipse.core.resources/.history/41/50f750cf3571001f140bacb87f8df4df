@@ -1,0 +1,8 @@
+package br.com.spotmy.audio;
+
+public class Musica extends Audio {
+	private String album;
+	private String genero;
+	
+	
+}

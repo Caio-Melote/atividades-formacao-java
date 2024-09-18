@@ -1,0 +1,14 @@
+
+public class Condicional {
+
+	public static void main(String[] args) {
+		int ano = 2006;
+		boolean incluido = true;
+		double notaFilme = 9.9;
+		
+		if (ano >= 2000) {
+			System.out.println("Filme dos anos 2000");
+		}
+	}
+
+}
