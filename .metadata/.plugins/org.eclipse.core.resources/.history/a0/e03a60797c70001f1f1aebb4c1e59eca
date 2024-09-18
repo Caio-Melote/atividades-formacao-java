@@ -1,8 +1,0 @@
-public class Filme {
-	String nome;
-	int anoLancamento;
-	boolean incluidoAssinatura;
-	double avaliacao;
-	int totalAvaliacao;
-	int duracaoMinutos;
-}

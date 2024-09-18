@@ -1,5 +1,0 @@
-package br.com.buscacep.modelo;
-
-public record ViaCepRecord(String logradouro, String distritos, String cidade,String unidadeFederativa,String populacaoCidade) {
-
-}
