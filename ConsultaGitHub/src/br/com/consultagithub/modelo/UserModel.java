@@ -1,5 +1,7 @@
 package br.com.consultagithub.modelo;
 
+import br.com.consultagithub.record.RecordJson;
+
 public class UserModel {
 	
 	//Atributos
@@ -20,7 +22,7 @@ public class UserModel {
 		setRepositorios(repositorios);
 	}
 	
-	public UserModel(traduzJson usuario) {
+	public UserModel(RecordJson usuario) {
 		setId(usuario.id());
 		setNome(usuario.name());
 		setLogin(usuario.login());
@@ -71,7 +73,7 @@ public class UserModel {
 
 	@Override
 	public String toString() {
-		return "\n-->Dados do usuário: " + 
+		return "\n\n--> Dados do usuário: " + 
 				"\nId = " + id + 
 				"\nNome = " + nome + 
 				"\nLogin = " + login + 

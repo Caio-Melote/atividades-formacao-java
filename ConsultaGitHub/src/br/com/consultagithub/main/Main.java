@@ -10,18 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//import javax.print.attribute.SetOfIntegerSyntax;
+
 import com.google.gson.Gson;
 
 import br.com.consultagithub.modelo.UserModel;
-import br.com.consultagithub.modelo.traduzJson;
+import br.com.consultagithub.record.RecordJson;
 
 public class Main {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		String nomeUsuario = "";
 		Scanner captura = new Scanner(System.in); 
 		List<UserModel> listaUsuarios = new ArrayList<UserModel>();
-		List<UserModel> lista02 = new ArrayList<UserModel>();
-		
 		
 		while(!nomeUsuario.equals("sair")) {
 			System.out.println("Digite o username do usuário que deseja buscar: ");
@@ -42,18 +42,26 @@ public class Main {
 			try {
 				HttpResponse <String> resposta = client.send(request, HttpResponse.BodyHandlers.ofString());	
 				
+				if(resposta.statusCode() == 404) {
+					throw new Exception("Usuário não encontrado: " + nomeUsuario);
+				}else {
 				Gson gson = new Gson();
 				
-				traduzJson usuario = gson.fromJson(resposta.body(),traduzJson.class);
+				RecordJson usuario = gson.fromJson(resposta.body(),RecordJson.class);
 				UserModel novoUsuario = new UserModel(usuario);
 				listaUsuarios.add(novoUsuario);	
+				}
 			} catch (Exception e) {
-				System.out.println("Erro!!\n" + e);
+				System.out.println("Erro!!\n" + e + "\n");
 			}
-					
+	
 		}
 		
-		System.out.println("Usuário println: " + listaUsuarios.toString());
+		for(UserModel user : listaUsuarios) {
+			System.out.println(user);
+		}
+		
+		//System.out.println("Usuário println: " + listaUsuarios.toString());
 		captura.close();
 	}
 }
