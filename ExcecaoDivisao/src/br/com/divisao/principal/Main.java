@@ -26,6 +26,7 @@ public class Main {
 			
 		} while (menu != 0);
 		
+		
 		escaneador.close();
 	}
 }

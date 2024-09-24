@@ -1,3 +1,4 @@
+package br.com.array.main;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;

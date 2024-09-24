@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 import br.com.stlus.calculos.CalculadoraTempo;
 import br.com.stlus.calculos.FiltroRecomendacao;
@@ -67,6 +68,5 @@ public class Principal {
 		episodio.setSerie(minhaSerie);
 		episodio.setTotalVisualizacao(400);
 		filtro.filtra(episodio);
-
 	}
 }
