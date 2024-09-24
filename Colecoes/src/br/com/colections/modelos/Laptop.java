@@ -2,13 +2,13 @@ package br.com.colections.modelos;
 
 import java.util.Objects;
 
-public class Laptop {
+public class Laptop implements Comparable<Laptop> {
 	
-	private int id;
+	private Integer id;
 	private String nome;
 	private double preco;
 	
-	public Laptop(int id, String nome, double preco) {
+	public Laptop(Integer id, String nome, double preco) {
 		Objects.requireNonNull(id, "O ID não pode ser null");
 		Objects.requireNonNull(nome,"O Nome não pode ser null");
 		this.id = id;
@@ -16,19 +16,19 @@ public class Laptop {
 		this.preco = preco;
 	}
 		
-	private int getId() {
+	public Integer getId() {
 		return id;
 	}
-	private void setId(int id) {
+	private void setId(Integer id) {
 		this.id = id;
 	}
-	private String getNome() {
+	public String getNome() {
 		return nome;
 	}
 	private void setNome(String nome) {
 		this.nome = nome;
 	}
-	private double getPreco() {
+	public double getPreco() {
 		return preco;
 	}
 	private void setPreco(double preco) {
@@ -52,6 +52,32 @@ public class Laptop {
 		return id == other.id && Objects.equals(nome, other.nome)
 				&& Double.doubleToLongBits(preco) == Double.doubleToLongBits(other.preco);
 	}
+
+	@Override
+	public String toString() {
+		return "Laptop: "
+				+ "\nId = " + id 
+				+ "\nNome = " + nome 
+				+ "\nPreco = " + preco;
+	}
+
+	@Override
+	public int compareTo(Laptop l) {
+//		if(this.id < l.getId()) {
+//			return -1;
+//		} else if(this.id.equals(l.getId())) {
+//			return 0;
+//		} else {
+//			return 1;
+//		}
+		
+		//Ordenado pelo ID:
+		//return this.id.compareTo(l.getId());
+		
+		//Ordenado pelo nome:
+		return this.nome.compareTo(l.getNome());
+	}
+	
 	
 	
 	
