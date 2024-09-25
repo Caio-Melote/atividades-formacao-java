@@ -1,13 +1,13 @@
 package br.com.colections.modelos;
 
-public class Smartphone {
-	private int id;
+public class Smartphone implements Comparable<Smartphone>{
+	private Integer id;
 	private String serialNumber;
 	private String marca;
 	private double preco;
 	
 	//Construtor
-	public Smartphone(int id, String serialNumber, String marca, double preco) {
+	public Smartphone(Integer id, String serialNumber, String marca, double preco) {
 		this.id = id;
 		this.serialNumber = serialNumber;
 		this.marca = marca;
@@ -15,7 +15,7 @@ public class Smartphone {
 	}
 	
 	//Getter
-	private int getId() {
+	private Integer getId() {
 		return id;
 	}
 	
@@ -32,7 +32,7 @@ public class Smartphone {
 	}
 	
 	//Setter
-	private void setId(int id) {
+	private void setId(Integer id) {
 		this.id = id;
 	}
 	
@@ -52,7 +52,7 @@ public class Smartphone {
 	
 	@Override
 	public String toString() {
-		return "\nSmartphone:"
+		return "\n\nSmartphone:"
 				+ "\nId=" + id 
 				+ "\nSerial Number= " + serialNumber 
 				+ "\nMarca= " + marca 
@@ -77,6 +77,28 @@ public class Smartphone {
 	@Override
 	public int hashCode() {
 		return serialNumber == null ? 0 : this.serialNumber.hashCode();
+	}
+
+	@Override
+	public int compareTo(Smartphone o) {
+//		if (this.preco > o.preco) {
+//            // Current object is older, return 1
+//            return 1;
+//        } else if (this.preco < o.preco) {
+//            // Current object is younger, return -1
+//            return -1;
+//        } else {
+//            // Ages are the same, return 0
+//            return 0;
+//        }
+		
+		int res = this.id.compareTo(o.getId());
+		if(res != 0) {
+			return this.marca.compareTo(o.marca);
+		} else {
+			return 0;
+		}
+		
 	}
 	
 	

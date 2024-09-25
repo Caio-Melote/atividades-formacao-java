@@ -24,7 +24,7 @@ public class Iterador {
 		
 		Iterator<Perfumes> iterador = listaPerfumes.iterator();
 		
-		while(iterador.hasNext()) {
+		while(iterador.hasNext()) { //Utilizando um iterator para buscar e excluir da lista. Loops tradicionais como 'FOR' e 'WHILE' resultam em erro.
 			Perfumes p = iterador.next();
 			if(p.getQuantidade() == 0) {
 				iterador.remove();

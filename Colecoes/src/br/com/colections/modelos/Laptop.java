@@ -63,6 +63,9 @@ public class Laptop implements Comparable<Laptop> {
 
 	@Override
 	public int compareTo(Laptop l) {
+		//Versão extensa
+		//o que ocorre por baixo dos panos
+		
 //		if(this.id < l.getId()) {
 //			return -1;
 //		} else if(this.id.equals(l.getId())) {
@@ -71,6 +74,8 @@ public class Laptop implements Comparable<Laptop> {
 //			return 1;
 //		}
 		
+		//Jogando a responsabilidade para os objetos:
+
 		//Ordenado pelo ID:
 		//return this.id.compareTo(l.getId());
 		
