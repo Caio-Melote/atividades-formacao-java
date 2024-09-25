@@ -3,6 +3,8 @@ package br.com.colections.metodos;
 import java.util.NavigableSet;
 import java.util.TreeSet;
 
+import javax.xml.crypto.Data;
+
 import br.com.colections.modelos.Smartphone;
 
 public class NavigableSetTest {
@@ -13,19 +15,23 @@ public class NavigableSetTest {
 		NavigableSet<Smartphone> nSet = new TreeSet<>();
 
 		// 1ª Forma de adicionar
-		nSet.add(new Smartphone(1, "1a2b3c", "Maça", 9899));
-		nSet.add(new Smartphone(2, "z1x2y3", "Sumsang", 7600));
-		nSet.add(new Smartphone(3, "a9b8c7", "Konia", 5400));
-		nSet.add(new Smartphone(8, "1a2b3c", "Generic", 1999));
+		nSet.add(new Smartphone(121, "99", "Arec", 0));
+		nSet.add(new Smartphone(22, "88", "Best", 0));
+		nSet.add(new Smartphone(37, "77", "Ciao", 0));
+		nSet.add(new Smartphone(8, "55", "HP", 0));
 
 		// 2ª Forma de adicionar
-		Smartphone novoSmartphone = new Smartphone(123, "1a2b3c", "Maça", 17000.0);
+		Smartphone novoSmartphone = new Smartphone(10, "65", "Dellet", 0);
 		nSet.add(novoSmartphone);
 
 		System.out.println("Resultado: \n" + nSet.toString());
 
-		System.out.println("=-=-=-=-=-=-=-=-=-==--");
-		System.out.println("Lower: " + nSet.lower(novoSmartphone));
+		//Tudo verificado pelo nome da marca
+		System.out.println("=-=-=-=-=-=-=-=-=-==--"); 
+		System.out.println("\n-----------\nLower: " + nSet.lower(novoSmartphone));
+		System.out.println("\n-----------\nHigher: " + nSet.higher(novoSmartphone));
+		System.out.println("\n-----------\nFloor: " + nSet.floor(novoSmartphone));
+		System.out.println("\n-----------\nCeiling: " + nSet.ceiling(novoSmartphone));
 	}
 
 }

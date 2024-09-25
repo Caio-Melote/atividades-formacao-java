@@ -59,20 +59,20 @@ public class Smartphone implements Comparable<Smartphone>{
 				+ "\nPreco= " + preco;
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if(obj == null) {
-			return false;
-		} else if(this == obj){
-			return true;
-		} else if(this.getClass() != obj.getClass()) {
-			return false;
-		}
-		
-		Smartphone smartphone = (Smartphone) obj;
-
-		return serialNumber != null && serialNumber.equals(smartphone.serialNumber);
-	}
+//	@Override
+//	public boolean equals(Object obj) {
+//		if(obj == null) {
+//			return false;
+//		} else if(this == obj){
+//			return true;
+//		} else if(this.getClass() != obj.getClass()) {
+//			return false;
+//		}
+//		
+//		Smartphone smartphone = (Smartphone) obj;
+//
+//		return serialNumber != null && serialNumber.equals(smartphone.serialNumber);
+//	}
 
 	@Override
 	public int hashCode() {
