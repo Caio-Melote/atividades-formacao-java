@@ -3,9 +3,6 @@ package br.com.jpa.estabelecimento.modelo;
 import java.math.BigDecimal;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import java.util.List;
 import br.com.jpa.estabelecimento.dao.CategoriaDao;
 import br.com.jpa.estabelecimento.dao.ProdutoDao;
@@ -14,6 +11,7 @@ import br.com.jpa.estabelecimento.util.JpaUtil;
 public class CadastroProduto {
 	public static void main(String[] args) {
 		
+		//Chama funçaõ que cadastra produtos
 		//cadastrarProduto();
 		
 		//Busca por ID
@@ -32,6 +30,9 @@ public class CadastroProduto {
 		
 		//Busca filtrando categoria e coloca em uma lista
 		List<Produto> listaCategoriaList = daoProduto.buscarCategoria("GELADEIRA");
+		
+		//Busca nativa retornando Produto
+		Produto prodOBJ = daoProduto.buscaNativa("Philco");
 		
 		//Busca apenas 1 registro
 		BigDecimal precoProduto = daoProduto.buscarPrecoComNome("BRASTEMP");
@@ -62,12 +63,16 @@ public class CadastroProduto {
 		for(Produto cat : listaCategoriaList) {
 			System.out.println(cat.getNome());
 		}
+			
+		//Busca nativa
+		System.out.println("=-------------------------------------= ");
+		System.out.println("BUSCA NATIVA : " + prodOBJ);	
 	}
 
 	private static void cadastrarProduto() {
 		
-		Categoria novaCategoria = new Categoria("GELADEIRA");		
-		Produto novoProduto = new Produto("BRASTEMP","487L Frost Free", new BigDecimal("5690.50"), novaCategoria);
+		Categoria novaCategoria = new Categoria("TV");		
+		Produto novoProduto = new Produto("Philco","90hz", new BigDecimal("3400.80"), novaCategoria);
 		
 		EntityManager em = JpaUtil.getEntityManager();
 		

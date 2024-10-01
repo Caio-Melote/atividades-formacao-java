@@ -3,15 +3,12 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ManyToAny;
 
 @Entity
 @Table(name = "produtos")
@@ -84,5 +81,18 @@ public class Produto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Produto:"
+				+ "\nId = " + id 
+				+ "\nNome = " + nome 
+				+ "\nDescricao = " + descricao 
+				+ "\nPreco = " + preco
+				+ "\nData de cadastro = " + dataCadastro 
+				+ "\nCategoria = " + categoria;
+	}
+	
 	
 }

@@ -3,7 +3,6 @@ package br.com.jpa.estabelecimento.dao;
 import javax.persistence.EntityManager;
 
 import br.com.jpa.estabelecimento.modelo.Categoria;
-import br.com.jpa.estabelecimento.modelo.Produto;
 
 public class CategoriaDao {
 	

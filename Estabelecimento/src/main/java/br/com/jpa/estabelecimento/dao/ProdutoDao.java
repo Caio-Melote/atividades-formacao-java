@@ -53,11 +53,19 @@ public class ProdutoDao {
 				.getResultList();
 	}
 	
+	
 	public BigDecimal buscarPrecoComNome(String nome){
 		String jpql = "SELECT p.preco FROM Produto p WHERE p.nome = ?1";
 		return em.createQuery(jpql, BigDecimal.class)
 				.setParameter(1, nome)
 				.getSingleResult(); //Método para carregar um único registro
+	}
+	
+	public Produto buscaNativa(String nome) {
+		String slq = "SELECT * FROM produtos WHERE nome = '"+nome+"'";
+		Produto prodOBJ = (Produto) em.createNativeQuery(slq, Produto.class)
+									.getSingleResult();
+		return (Produto) prodOBJ;
 	}
 	
 }
