@@ -8,7 +8,7 @@ public class Main {
 		int ano = 2006;
 		System.out.println("Lançamento = Ano de " + ano + "\n");
 		
-		boolean incluido = true;
+		//boolean incluido = true;
 		double notaFilme = 8;
 		double media = (notaFilme + 9) / 2;
 		System.out.println("Media da nota = " + media + "\n"); 

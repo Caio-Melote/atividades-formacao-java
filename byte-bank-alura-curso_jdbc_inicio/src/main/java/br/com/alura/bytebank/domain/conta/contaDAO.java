@@ -8,13 +8,6 @@ import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.management.RuntimeErrorException;
-import javax.print.attribute.SetOfIntegerSyntax;
-
-import com.mysql.cj.jdbc.JdbcConnection;
-import com.mysql.cj.protocol.Resultset;
-import com.mysql.cj.protocol.ResultsetRow;
-import com.mysql.cj.xdevapi.Statement;
 
 import br.com.alura.bytebank.domain.cliente.Cliente;
 import br.com.alura.bytebank.domain.cliente.DadosCadastroCliente;

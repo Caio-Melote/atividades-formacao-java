@@ -1,10 +1,8 @@
 package br.com.array.main;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.print.attribute.SetOfIntegerSyntax;
 
 import br.com.array.modelo.Produto;
 import br.com.array.modelo.ProdutoPerecivel;
@@ -79,6 +77,6 @@ public class Principal {
 		for (Produto p : listaProduto) {
 			System.out.println("\n"+p);
 		}
-			
+		escaneador.close();	
 	}
 }

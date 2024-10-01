@@ -29,7 +29,7 @@ public class EqualsTest {
 		
 		Smartphone s1 = new Smartphone(1,"1a2b3c","Maça",9899);
 		Smartphone s2 = new Smartphone(2,"z1x2y3","Sumsang",7600);
-		Smartphone s3 = new Smartphone(3,"a9b8c7","Konia",5400);
+		//Smartphone s3 = new Smartphone(3,"a9b8c7","Konia",5400);
 		System.out.println("\nComparação de um objeto de outra classe modelo");
 		System.out.println("Comparação com sebrescrita do equals na classe: " + s1.equals(s2));
 		

@@ -2,6 +2,7 @@ package br.com.jpa.estabelecimento.modelo;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,9 +18,13 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(name = "nome")
 	private String nome;
+	@Column(name = "descricao")
 	private String descricao;
+	@Column(name = "preco")
 	private BigDecimal preco;
+	@Column(name = "dataCadastro")
 	private LocalDate dataCadastro = LocalDate.now();
 	
 	@ManyToOne

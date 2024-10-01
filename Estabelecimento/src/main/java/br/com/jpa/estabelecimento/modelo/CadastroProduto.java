@@ -11,13 +11,13 @@ import br.com.jpa.estabelecimento.util.JpaUtil;
 public class CadastroProduto {
 	public static void main(String[] args) {
 		
-		//Chama funçaõ que cadastra produtos
+		//Chama função que cadastra produtos
 		//cadastrarProduto();
 		
 		//Busca por ID
 		EntityManager em = JpaUtil.getEntityManager();
 		ProdutoDao daoProduto = new ProdutoDao(em);
-		Produto p = daoProduto.buscarId(2l);
+		Produto p = daoProduto.buscarId(1l);
 		System.out.println("Imprimindo preço do produto buscado por ID: ");
 		System.out.println(p.getPreco());
 		System.out.println("=-------------------------------------= ");
@@ -32,7 +32,11 @@ public class CadastroProduto {
 		List<Produto> listaCategoriaList = daoProduto.buscarCategoria("GELADEIRA");
 		
 		//Busca nativa retornando Produto
-		Produto prodOBJ = daoProduto.buscaNativa("Philco");
+		List<Produto> prodList = daoProduto.buscaNativa("Philco");
+		
+		//Busca nativa retornando Produto
+		List<String> stringList = daoProduto.buscaNativaString("Philco");
+			
 		
 		//Busca apenas 1 registro
 		BigDecimal precoProduto = daoProduto.buscarPrecoComNome("BRASTEMP");
@@ -66,13 +70,17 @@ public class CadastroProduto {
 			
 		//Busca nativa
 		System.out.println("=-------------------------------------= ");
-		System.out.println("BUSCA NATIVA : " + prodOBJ);	
+		System.out.println("BUSCA NATIVA : " + prodList);	
+		
+		//Busca nativa
+		System.out.println("=-------------------------------------= ");
+		System.out.println("BUSCA NATIVA STRING : " + stringList);
 	}
 
 	private static void cadastrarProduto() {
 		
 		Categoria novaCategoria = new Categoria("TV");		
-		Produto novoProduto = new Produto("Philco","90hz", new BigDecimal("3400.80"), novaCategoria);
+		Produto novoProduto = new Produto("PHILCO","120Hz", new BigDecimal("3480.65"), novaCategoria);
 		
 		EntityManager em = JpaUtil.getEntityManager();
 		

@@ -4,7 +4,7 @@ public class Condicional {
 	public static void main(String[] args) {
 		int ano = 2006;
 		boolean incluido = false;
-		double notaFilme = 9.9;
+		//double notaFilme = 9.9;
 		String tipoPlano = "VIP";
 		
 		if (ano >= 2000) {

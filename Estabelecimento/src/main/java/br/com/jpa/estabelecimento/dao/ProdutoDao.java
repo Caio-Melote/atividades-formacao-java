@@ -4,11 +4,14 @@ import javax.persistence.EntityManager;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import br.com.jpa.estabelecimento.modelo.Produto;
 
 public class ProdutoDao {
 	
 	private EntityManager em;
+	//private List<?> resultList;
 
 	public ProdutoDao(EntityManager em) {
 		this.em = em;
@@ -61,11 +64,28 @@ public class ProdutoDao {
 				.getSingleResult(); //Método para carregar um único registro
 	}
 	
-	public Produto buscaNativa(String nome) {
-		String slq = "SELECT * FROM produtos WHERE nome = '"+nome+"'";
-		Produto prodOBJ = (Produto) em.createNativeQuery(slq, Produto.class)
-									.getSingleResult();
-		return (Produto) prodOBJ;
+	public List<Produto> buscaNativa(String nome) {
+		String sql = "SELECT * FROM produtos WHERE nome = '"+nome+"'" ;				
+		
+		List<?> resultado = em.createNativeQuery(sql, Produto.class)
+				.getResultList();
+	
+		return resultado.stream()
+				.filter(Produto.class::isInstance)
+	            .map(Produto.class::cast)
+	            .collect(Collectors.toList());
+	}
+	
+	public List<String> buscaNativaString(String nome) {
+		String sql = "SELECT nome FROM produtos WHERE nome = '"+nome+"'" ;				
+		
+		List<?> resultado = em.createNativeQuery(sql)
+				.getResultList();
+	
+		return resultado.stream()
+				.filter(String.class::isInstance)
+	            .map(String.class::cast)
+	            .collect(Collectors.toList());
 	}
 	
 }
