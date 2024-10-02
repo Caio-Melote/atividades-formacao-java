@@ -38,6 +38,12 @@ public class PedidoDao {
 		return em.createQuery(jpql, RelatorioVendasVo.class).getResultList();
 	}
 	
+	public Pedidos buscarPedidoComCliente(Long id) {
+		return em.createQuery("SELECT p FROM Pedidos p JOIN FETCH p.cliente WHERE p.id = :id", Pedidos.class)
+				.setParameter("id", id)
+				.getSingleResult();
+	}
+	
 //	public void atualizarProduto(Pedidos pedido) {
 //		this.em.merge(pedido);
 //	}

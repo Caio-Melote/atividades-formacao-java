@@ -4,9 +4,12 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -15,6 +18,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "produtos")
 @NamedQuery(name = "produtoPorCategoria", query = "SELECT p FROM Produto p WHERE p.categoria.nome = ?1")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Produto {
 	
 	@Id
@@ -29,7 +33,7 @@ public class Produto {
 	@Column(name = "data_cadastro")
 	private LocalDate dataCadastro = LocalDate.now();
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Categoria categoria;
 	
 	
@@ -39,7 +43,6 @@ public class Produto {
 
 
 	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
-		super();
 		this.nome = nome;
 		this.descricao = descricao;
 		this.preco = preco;

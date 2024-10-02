@@ -41,9 +41,9 @@ public class CadastroProduto {
 			
 		
 		//Busca apenas 1 registro
-		BigDecimal precoProduto = daoProduto.buscarPrecoComNome("BRASTEMP");
-		System.out.println("=------------------------=");
-		System.out.println("O preco do produto 'BRASTEMP' é: "+ precoProduto);
+//		BigDecimal precoProduto = daoProduto.buscarPrecoComNome("BRASTEMP");
+//		System.out.println("=------------------------=");
+//		System.out.println("O preco do produto 'BRASTEMP' é: "+ precoProduto);
 		
 		//Primeira maneira de imprimir toda a lista
 		//listaProdutos.forEach(p2 -> System.out.println(p.getDescricao())); 
