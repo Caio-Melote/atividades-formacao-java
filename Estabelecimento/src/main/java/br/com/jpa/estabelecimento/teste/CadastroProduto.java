@@ -1,4 +1,4 @@
-package br.com.jpa.estabelecimento.modelo;
+package br.com.jpa.estabelecimento.teste;
 
 import java.math.BigDecimal;
 
@@ -6,6 +6,8 @@ import javax.persistence.EntityManager;
 import java.util.List;
 import br.com.jpa.estabelecimento.dao.CategoriaDao;
 import br.com.jpa.estabelecimento.dao.ProdutoDao;
+import br.com.jpa.estabelecimento.modelo.Categoria;
+import br.com.jpa.estabelecimento.modelo.Produto;
 import br.com.jpa.estabelecimento.util.JpaUtil;
 
 public class CadastroProduto {
@@ -79,8 +81,8 @@ public class CadastroProduto {
 
 	private static void cadastrarProduto() {
 		
-		Categoria novaCategoria = new Categoria("TV");		
-		Produto novoProduto = new Produto("PHILCO","120Hz", new BigDecimal("3480.65"), novaCategoria);
+		Categoria novaCategoria = new Categoria("GAMES");		
+		Produto novoProduto = new Produto("Playstation 5","1 TB", new BigDecimal("2050.00"), novaCategoria);
 		
 		EntityManager em = JpaUtil.getEntityManager();
 		

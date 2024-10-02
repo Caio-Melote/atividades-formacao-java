@@ -50,8 +50,8 @@ public class ProdutoDao {
 	
 	
 	public List<Produto> buscarCategoria(String nome){
-		String jpql = "SELECT p FROM Produto p WHERE p.categoria.nome = ?1";
-		return em.createQuery(jpql, Produto.class)
+		//String jpql = "SELECT p FROM Produto p WHERE p.categoria.nome = ?1";
+		return em.createNamedQuery("produtoPorCategoria", Produto.class)
 				.setParameter(1, nome)
 				.getResultList();
 	}
