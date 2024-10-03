@@ -74,9 +74,11 @@ public class CadastroProduto {
 		System.out.println("=-------------------------------------= ");
 		System.out.println("BUSCA NATIVA : " + prodList);	
 		
-		//Busca nativa
+		//Busca nativa retornando String
 		System.out.println("=-------------------------------------= ");
 		System.out.println("BUSCA NATIVA STRING : " + stringList);
+		
+		daoProduto.fechar();
 	}
 
 	private static void cadastrarProduto() {

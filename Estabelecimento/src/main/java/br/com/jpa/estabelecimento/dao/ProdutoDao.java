@@ -167,4 +167,8 @@ public class ProdutoDao {
 		
 		return listaResultado;
 	}
+	
+	public void fechar() {
+		em.close();
+	}
 }
