@@ -2,6 +2,7 @@ package br.com.jpa.estabelecimento.modelo;
 
 import javax.persistence.Entity;
 
+@Entity
 public class Fogao extends Produto{
 	
 	private String marca;
