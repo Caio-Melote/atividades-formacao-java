@@ -34,10 +34,10 @@ public class CadastroProduto {
 		List<Produto> listaCategoriaList = daoProduto.buscarCategoria("GELADEIRA");
 		
 		//Busca nativa retornando Produto
-		List<Produto> prodList = daoProduto.buscaNativa("Philco");
+		List<Produto> prodList = daoProduto.buscaNativa("PHILCO");
 		
 		//Busca nativa retornando Produto
-		List<String> stringList = daoProduto.buscaNativaString("Philco");
+		List<String> stringList = daoProduto.buscaNativaString("Playstation 5");
 			
 		
 		//Busca apenas 1 registro

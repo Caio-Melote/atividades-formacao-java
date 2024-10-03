@@ -9,8 +9,9 @@ import javax.persistence.criteria.Root;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+//import java.util.stream.Collectors;
 
 import br.com.jpa.estabelecimento.modelo.Produto;
 
@@ -73,13 +74,25 @@ public class ProdutoDao {
 	public List<Produto> buscaNativa(String nome) {
 		String sql = "SELECT * FROM produtos WHERE nome = '"+nome+"'" ;				
 		
-		List<?> resultado = em.createNativeQuery(sql, Produto.class)
+		List<?> listaResultado = em.createNativeQuery(sql, Produto.class)
 				.getResultList();
 	
-		return resultado.stream()
-				.filter(Produto.class::isInstance)
-	            .map(Produto.class::cast)
-	            .collect(Collectors.toList());
+		List<Produto> produtos = new ArrayList<>(); 
+
+	    for (Object obj : listaResultado) { 
+	        if (obj instanceof Produto) { 
+	        	Produto produto = new Produto();
+	        	produto = (Produto) obj;
+	            produtos.add(produto); 
+	        }
+	    }
+	    
+	    return produtos; 
+	    
+//		return resultado.stream()
+//				.filter(Produto.class::isInstance)
+//	            .map(Produto.class::cast)
+//	            .collect(Collectors.toList());
 	}
 	
 	public List<String> buscaNativaString(String nome) {
@@ -87,11 +100,22 @@ public class ProdutoDao {
 		
 		List<?> resultado = em.createNativeQuery(sql)
 				.getResultList();
-	
-		return resultado.stream()
-				.filter(String.class::isInstance)
-	            .map(String.class::cast)
-	            .collect(Collectors.toList());
+		
+		List<String> stringList = new ArrayList<>();
+		
+		for(Object object : resultado) {
+			if (object instanceof String) {
+				String novaString = new String();
+				novaString = (String)object;
+				stringList.add(novaString);
+			}
+		}
+		return stringList;
+		
+//		return resultado.stream()
+//				.filter(String.class::isInstance)
+//	            .map(String.class::cast)
+//	            .collect(Collectors.toList());
 	}
 	
 	public List<Produto> buscarPorParametros(String nome, 
