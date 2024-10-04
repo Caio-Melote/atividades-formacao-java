@@ -28,21 +28,22 @@ public class Personagem {
 	
 	//@ManyToOne(fetch = FetchType.LAZY)
 	@ManyToOne
-	private Localizacao origem;
+	@Column(name = "Origem")
+	private Localizacao origin;
 	
 	public Personagem() {
 		
 	}
 	
 	public Personagem(Integer id, String name, String status, String species, String type, String gender,
-			Localizacao origem, String image) {
+			Localizacao origin, String image) {
 		this.id = id;
 		this.name = name;
 		this.status = status;
 		this.species = species;
 		this.type = type;
 		this.gender = gender;
-		this.origem = origem;
+		this.origin = origin;
 		this.image = image;
 	}
 
@@ -71,7 +72,7 @@ public class Personagem {
 	}
 
 	public Localizacao getOrigem() {
-		return origem;
+		return origin;
 	}
 
 	public String getImagemURL() {
@@ -102,8 +103,8 @@ public class Personagem {
 		this.gender = gender;
 	}
 
-	public void setOrigem(Localizacao origem) {
-		this.origem = origem;
+	public void setOrigem(Localizacao origin) {
+		this.origin = origin;
 	}
 
 	public void setImage(String image) {
@@ -121,7 +122,7 @@ public class Personagem {
 				+ "\n Type = "+ type 
 				+ "\n Gender = " + gender 
 				+ "\n Image = " + image 
-				+ "\n Origem = " + origem + "\n";
+				+ "\n Origem = " + origin + "\n";
 	}
 	
 	

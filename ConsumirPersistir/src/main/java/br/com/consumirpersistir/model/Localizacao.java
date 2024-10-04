@@ -17,16 +17,19 @@ public class Localizacao {
 	private String type;
 	@Column(name = "dimensao")
 	private String dimension;
+	@Column(name = "url_localizacao")
+	private String url;
 	
 	public Localizacao() {
 		
 	}
 	
-	public Localizacao(Integer id, String name, String type, String dimension) {
+	public Localizacao(Integer id, String name, String type, String dimension, String url) {
 		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.dimension = dimension;
+		this.url = url;
 	}
 
 	public Integer getId() {
@@ -43,6 +46,10 @@ public class Localizacao {
 
 	public String getDimension() {
 		return dimension;
+	}
+	
+	public String getUrl() {
+		return url;
 	}
 
 	public void setId(Integer id) {
@@ -61,15 +68,17 @@ public class Localizacao {
 		this.dimension = dimension;
 	}
 
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
 	@Override
 	public String toString() {
-		return "	Localizacao: "
+		return "\n	Localizacao: "
 				+ "\n 	Id = " + id 
 				+ "\n 	Name = " + name 
 				+ "\n 	Type = " + type 
-				+ "\n 	Dimension = " + dimension + "\n";
+				+ "\n 	Dimension = " + dimension 
+				+ "\n 	Link localização =  " + url + "\n";
 	}
-	
-	
-	
 }

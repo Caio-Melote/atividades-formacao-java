@@ -6,6 +6,7 @@ import java.net.http.HttpRequest;
 
 import com.google.gson.Gson;
 
+import br.com.consumirpersistir.dto.PersonagemDto;
 import br.com.consumirpersistir.model.Personagem;
 
 import java.net.http.HttpResponse;
@@ -14,19 +15,19 @@ import java.util.List;
 
 public class Funcoes {
 	
-	
-	
 	public void popularBanco() {
 		HttpClient cliente = HttpClient.newHttpClient();
 		List<Personagem> listaPersonagem = new ArrayList<>();
-		
+		Integer pagina = 1;
+			
 			try {
 				
-				URI linkUrl = URI.create("https://rickandmortyapi.com/api/character");
+				URI linkUrl = URI.create("https://rickandmortyapi.com/api/character/?page=" + pagina);
 				
 				HttpRequest request = HttpRequest.newBuilder().uri(linkUrl).GET().build();
 				
 				HttpResponse<String> resposta = cliente.send(request, HttpResponse.BodyHandlers.ofString());
+				
 				
 				System.out.println(resposta.body());
 				
@@ -35,13 +36,19 @@ public class Funcoes {
 				} else {
 					Gson gson = new Gson();
 					
-					Personagem personagem = gson.fromJson(resposta.body(), Personagem.class);
-					System.out.println("Personangem to string: " + personagem.toString());
-					listaPersonagem.add(personagem);
-					System.out.println(personagem.toString());
-//					RecordJson usuario = gson.fromJson(resposta.body(), RecordJson.class);
-//					UserModel novoUsuario = new UserModel(usuario);
-//					listaUsuarios.add(novoUsuario);
+					PersonagemDto personagemDto = gson.fromJson(resposta.body(), PersonagemDto.class);
+					
+//					System.out.println("Personangem to string: " + personagemDto.toString());
+//					System.out.println("To string test resultado" + personagemDto.getResult());
+					
+					for(Personagem character : personagemDto.getResult()) {
+						if (character instanceof Personagem) {
+							listaPersonagem.add(character);
+						}
+					}
+					
+					System.out.println("Lista: " + listaPersonagem.toString());				
+				
 				}
 				
 				
@@ -52,6 +59,8 @@ public class Funcoes {
 			}
 	
 	}
+	
+
 	
 	
 }
