@@ -36,7 +36,7 @@ public class Main {
 				HttpResponse<String> resposta = client.send(request, HttpResponse.BodyHandlers.ofString());
 
 				if (resposta.statusCode() == 404) {
-					System.out.println("!!Username INVÁLIDO!!");
+					System.out.println("!!Página nao encontrada!!");
 				} else {
 					Gson gson = new Gson();
 
