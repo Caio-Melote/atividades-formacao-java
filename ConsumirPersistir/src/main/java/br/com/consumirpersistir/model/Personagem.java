@@ -1,5 +1,6 @@
 package br.com.consumirpersistir.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 //import javax.persistence.FetchType;
@@ -27,7 +28,7 @@ public class Personagem {
 	private String image;
 	
 	//@ManyToOne(fetch = FetchType.LAZY)
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Localizacao origin;
 	
 	public Personagem() {
