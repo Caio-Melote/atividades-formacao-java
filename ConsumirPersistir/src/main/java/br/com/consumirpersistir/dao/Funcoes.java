@@ -22,6 +22,9 @@ import javax.persistence.Persistence;
 
 public class Funcoes {
 	
+	private EntityManager em;
+
+
 	public EntityManager iniciaEntityManager() {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("consumir_persistir");
 		EntityManager em = emf.createEntityManager();
@@ -95,5 +98,18 @@ public class Funcoes {
 		}
 			
 	} //popular banco
+	
+	
+	public List<Personagem> buscarPersonagensBanco(){
+		EntityManager em = iniciaEntityManager();
+		String jpql = "SELECT p FROM Personagem p";
+		return em.createQuery(jpql, Personagem.class).getResultList();
+	}
+	
+	public List<Localizacao> buscarLocalizacoesBanco(){
+		EntityManager em = iniciaEntityManager();
+		String jpql = "SELECT p FROM Localizacao p";
+		return em.createQuery(jpql, Localizacao.class).getResultList();
+	}
 
 } //funcoes

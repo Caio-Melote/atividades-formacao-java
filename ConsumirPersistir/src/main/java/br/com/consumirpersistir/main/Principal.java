@@ -1,8 +1,11 @@
 package br.com.consumirpersistir.main;
 
+import java.util.List;
 import java.util.Scanner;
 
 import br.com.consumirpersistir.dao.Funcoes;
+import br.com.consumirpersistir.model.Localizacao;
+import br.com.consumirpersistir.model.Personagem;
 
 public class Principal {
 
@@ -19,13 +22,17 @@ public class Principal {
 				funcoes.popularBanco();
 				break;
 			case 2: {
-
+				List<Personagem> listaPersonagem = funcoes.buscarPersonagensBanco();
+				System.out.println(listaPersonagem);
+				break;
 			}
 			case 3: {
-
+				List<Localizacao> listaLocalizacao = funcoes.buscarLocalizacoesBanco();
+				System.out.println(listaLocalizacao);
+				break;
 			}
 			case 4: {
-
+				
 			}
 			default:
 				throw new IllegalArgumentException("valor inesperado: " + menu);
@@ -37,10 +44,10 @@ public class Principal {
 
 	public static int menuString() {
 		System.out.println("=---------------------------------------= \nInsira a opção desejada:");
-		System.out.println("1 - Buscar todos os personagens e localizações");
-		System.out.println("2 - Exibir data do banco de dados");
-		System.out.println("3 - Buscar personagem");
-		System.out.println("4 - Buscar localização");
+		System.out.println("1 - Extrair e salvar todos os personagens e localizações da API");
+		System.out.println("2 - Exibir todos os personagens do banco de dados");
+		System.out.println("3 - Exibir todas localizações do banco de dados");
+		System.out.println("4 - Buscar personagem pelo nome");
 		System.out.println("5 - SAIR");
 		return teclado.nextInt();
 	}
