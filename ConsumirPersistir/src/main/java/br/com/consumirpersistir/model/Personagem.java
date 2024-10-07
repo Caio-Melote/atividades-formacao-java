@@ -28,7 +28,6 @@ public class Personagem {
 	
 	//@ManyToOne(fetch = FetchType.LAZY)
 	@ManyToOne
-	@Column(name = "Origem")
 	private Localizacao origin;
 	
 	public Personagem() {

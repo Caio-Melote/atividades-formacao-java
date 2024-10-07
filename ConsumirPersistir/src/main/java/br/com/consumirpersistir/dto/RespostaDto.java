@@ -6,12 +6,12 @@ import java.util.List;
 import br.com.consumirpersistir.model.Personagem;
 
 
-public class PersonagemDto {
+public class RespostaDto {
 	
 	private Object info;
 	private List<Personagem> results = new ArrayList<>();
 	
-	public PersonagemDto(Object info, Personagem results) {
+	public RespostaDto(Object info, Personagem results) {
 		super();
 		this.info = info;
 		this.results.add(results);

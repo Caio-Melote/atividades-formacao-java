@@ -6,7 +6,7 @@ import java.net.http.HttpRequest;
 
 import com.google.gson.Gson;
 
-import br.com.consumirpersistir.dto.PersonagemDto;
+import br.com.consumirpersistir.dto.RespostaDto;
 import br.com.consumirpersistir.model.Personagem;
 
 import java.net.http.HttpResponse;
@@ -36,12 +36,12 @@ public class Funcoes {
 				} else {
 					Gson gson = new Gson();
 					
-					PersonagemDto personagemDto = gson.fromJson(resposta.body(), PersonagemDto.class);
+					RespostaDto respostaDto = gson.fromJson(resposta.body(), RespostaDto.class);
 					
 //					System.out.println("Personangem to string: " + personagemDto.toString());
 //					System.out.println("To string test resultado" + personagemDto.getResult());
 					
-					for(Personagem character : personagemDto.getResult()) {
+					for(Personagem character : respostaDto.getResult()) {
 						if (character instanceof Personagem) {
 							listaPersonagem.add(character);
 						}
