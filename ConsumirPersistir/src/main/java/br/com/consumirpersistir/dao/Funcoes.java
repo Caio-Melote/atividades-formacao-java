@@ -21,13 +21,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class Funcoes {
-	
-	private EntityManager em;
 
 
 	public EntityManager iniciaEntityManager() {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("consumir_persistir");
-		EntityManager em = emf.createEntityManager();
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("consumir_persistir");
+		EntityManager em = entityManagerFactory.createEntityManager();
 		return em;
 	}
 	
@@ -103,13 +101,27 @@ public class Funcoes {
 	public List<Personagem> buscarPersonagensBanco(){
 		EntityManager em = iniciaEntityManager();
 		String jpql = "SELECT p FROM Personagem p";
-		return em.createQuery(jpql, Personagem.class).getResultList();
+		List<Personagem> listaResultante  = em.createQuery(jpql, Personagem.class).getResultList();
+		em.close();
+		return listaResultante;
+		//return em.createQuery(jpql, Personagem.class).getResultList();
 	}
 	
 	public List<Localizacao> buscarLocalizacoesBanco(){
 		EntityManager em = iniciaEntityManager();
 		String jpql = "SELECT p FROM Localizacao p";
+		em.close();
 		return em.createQuery(jpql, Localizacao.class).getResultList();
 	}
+	
+	public List<Personagem> buscarPersonagemNome(String nome){
+		EntityManager em = iniciaEntityManager();
+		String jpql = "SELECT p FROM Personagem p WHERE p.name = ?1";
+		List<Personagem> listaResultante  = em.createQuery(jpql, Personagem.class)
+				.setParameter(1, nome)
+				.getResultList();
+		em.close();
+		return listaResultante;
+		}
 
 } //funcoes

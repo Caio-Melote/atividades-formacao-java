@@ -25,14 +25,15 @@ public class Main {
 				break;
 			}
 
-			// Cliente (HTTP)
+			//Configurando o cliente para requisição
 			HttpClient client = HttpClient.newHttpClient();
 
 			try {
-				// Request (HTTP)
+				//Configurando requisição
 				HttpRequest request = HttpRequest.newBuilder()
 						.uri(URI.create("https://api.github.com/users/" + nomeUsuario)).GET().build();
-
+				
+				//Configurando resposta
 				HttpResponse<String> resposta = client.send(request, HttpResponse.BodyHandlers.ofString());
 
 				if (resposta.statusCode() == 404) {

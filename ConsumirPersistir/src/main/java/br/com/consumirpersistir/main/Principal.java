@@ -10,10 +10,12 @@ import br.com.consumirpersistir.model.Personagem;
 public class Principal {
 
 	public static Scanner teclado = new Scanner(System.in);
-
+	public static Scanner novoTeclado = new Scanner(System.in);
 	public static void main(String[] args) {
 		Integer menu = 0;
 		Funcoes funcoes = new Funcoes();
+		String nome = null;
+		
 		menu = menuString();
 
 		while (menu != 5) {
@@ -32,7 +34,12 @@ public class Principal {
 				break;
 			}
 			case 4: {
-				
+				System.out.println("Digite o nome que deseja buscar: ");
+				nome = novoTeclado.nextLine();
+				System.out.println(nome);
+				List<Personagem> listaNomePersonagem = funcoes.buscarPersonagemNome(nome);
+				System.out.println(listaNomePersonagem);
+				break;
 			}
 			default:
 				throw new IllegalArgumentException("valor inesperado: " + menu);
